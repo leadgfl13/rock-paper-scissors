@@ -8,6 +8,11 @@
     <script>
         console.log("Hello world");
         //Function to get computer choice goes here//
+        //math.Random gets a value between 0 and 1//
+        //choices.length is the length of the array, so 2, because 0,1,2.//
+        //multiply math. random and choice. lenght should equal anything from 0 to 2//
+        //math.floor rounds that number down//
+        //then choices[that final number] returns the corresponding item in the array//
         function getComputerChoice(){
             choices =["rock", "paper", "scissors"]
             item = choices[Math.floor(Math.random()*choices.length)];
