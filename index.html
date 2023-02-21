@@ -22,11 +22,14 @@
         alert(item);
 
         //Function to get player choice//
+        // prompt asks user for an input
+        //toLowercase conversts the input from the player to all lowercase//
+        //returns the lowercase input
         function getPlayerChoice(){
             choice = prompt("Do you pick rock, paper, or scissors")
             lower = choice.toLowerCase();
             return(lower)
-            console.log(lower)
+            
         }
 
         getPlayerChoice()
