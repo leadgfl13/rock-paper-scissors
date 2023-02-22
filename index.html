@@ -57,13 +57,19 @@
                 alert("You win!")
             }
             }
+            //This function makes the playRound function go 5 times
+            function game(rungame){
+                getComputerChoice()
+                getPlayerChoice()
+                playRound(lower,item)
+                
+            }
 
-        getComputerChoice()
-        getPlayerChoice()
         
        
-        playRound(lower,item)
-
+        for(i=0; i<5; i++){
+        game()
+        }
        
         
         
