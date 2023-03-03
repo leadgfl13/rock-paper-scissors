@@ -3,7 +3,7 @@
     <head>
         <meta charset = "utf-8">
         <Title>Rock-Paper-Scissors</Title>
-        <link rel ="stylehseet" href = "style.css">
+        <link rel ="stylesheet" href = "style.css">
     </head>
     <script>
    
@@ -78,6 +78,10 @@
                 return(score)
             }
 
+        //Need to create a buttons for each rock, paper, and scissors. Need to make the button as a thing to reference first.
+        //This creates the idea of a button in the DOM, can't reference the buttons in html without telling the DOM buttons exist, and here they are
+        var button = document.createElement("Button");
+        
         
         let score = 0
        
@@ -96,6 +100,14 @@
 
     <body>
 <!--Actual web page content goes here-->
+<!--Makes the physical buttons on the webpage-->
+<button>Rock</button>
+<button>Paper</button>
+<button>Scissors</button>
+<!-- Make a div, and have it display all console messages using DOM-->
+<div class = "announce">
+    Results go here
+</div>
 
     </body>
 </html>

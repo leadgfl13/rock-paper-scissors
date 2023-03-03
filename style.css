@@ -1,0 +1,16 @@
+body{
+    background-color:blue;
+}
+.announce{
+    display:flex;
+    background-color:salmon;
+    justify-content:center;
+    align-items:center;
+    color:skyblue;
+    font-size:24px;
+}
+
+button{
+    color:blue;
+    background-color:red;
+}
