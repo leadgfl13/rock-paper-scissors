@@ -5,6 +5,19 @@
         <Title>Rock-Paper-Scissors</Title>
         <link rel ="stylesheet" href = "style.css">
     </head>
+
+    <body>
+        <!--Actual web page content goes here-->
+        <!--Makes the physical buttons on the webpage-->
+        <button id="rock">Rock</button>
+        <button id = "paper">Paper</button>
+        <button id = "scissors">Scissors</button>
+        <!-- Make a div, and have it display all console messages using DOM-->
+        <div class = "announce">
+            Results go here
+        </div>
+        
+            </body>
     <script>
    
         //Function to get computer choice goes here//
@@ -25,12 +38,9 @@
         // prompt asks user for an input
         //toLowercase conversts the input from the player to all lowercase//
         //returns the lowercase input
-        function getPlayerChoice(){
-            choice = prompt("Do you pick rock, paper, or scissors")
-            lower = choice.toLowerCase();
-            return(lower)
+        
             
-        }
+        
         //this function takes two arguments from the functions earlier that return the player choice and the computer choice//
         //Then goes through a series of if statements to determine the print screen outcome//
         function playRound(playerSelection, computerSelection){
@@ -71,43 +81,41 @@
             }
             console.log("Welcome to rock, paper, scissors!    Can you beat me?")
             //This function makes the playRound function go 5 times
-            function game(rungame){
-                getComputerChoice()
-                getPlayerChoice()
-                playRound(lower,item)
-                return(score)
-            }
+            //function game(rungame){
+              //  getComputerChoice()
+              //  getPlayerChoice()
+              //  playRound(lower,item)
+             //   return(score)
+           // }
 
         //Need to create a buttons for each rock, paper, and scissors. Need to make the button as a thing to reference first.
-        //This creates the idea of a button in the DOM, can't reference the buttons in html without telling the DOM buttons exist, and here they are
-        var button = document.createElement("Button");
         
         
         let score = 0
        
-        game()
+        //game()
         
         
-      
-        
-        
-    
-    
+    const btn = document.querySelector('#rock');
+    const btn1 = document.querySelector('#scissors');
+    const btn2 =document.querySelector('#paper');
 
+    btn.addEventListener('click',() => {
+        console.log("rock");
+    });
+    //I need to select the button for rock
+
+  
+    btn1.addEventListener('click',() => {
+        console.log("scissors");
+    });
+
+    btn2.addEventListener('click',() => {
+        console.log("paper");
+    });
         
     </script>
     <!--The scripts for javascript go here-->
 
-    <body>
-<!--Actual web page content goes here-->
-<!--Makes the physical buttons on the webpage-->
-<button>Rock</button>
-<button>Paper</button>
-<button>Scissors</button>
-<!-- Make a div, and have it display all console messages using DOM-->
-<div class = "announce">
-    Results go here
-</div>
 
-    </body>
 </html>
