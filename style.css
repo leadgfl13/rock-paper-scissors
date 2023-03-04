@@ -1,5 +1,5 @@
 body{
-    background-color:blue;
+    background-color:rgb(191, 191, 255);
 }
 .announce{
     display:flex;
@@ -11,6 +11,6 @@ body{
 }
 
 button{
-    color:blue;
-    background-color:red;
+    color:rgb(149, 149, 201);
+    background-color:rgb(233, 233, 233);
 }
