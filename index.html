@@ -9,9 +9,13 @@
     <body>
         <!--Actual web page content goes here-->
         <!--Makes the physical buttons on the webpage-->
-        <button id="rock">Rock</button>
-        <button id = "paper">Paper</button>
-        <button id = "scissors">Scissors</button>
+<span class = "title"> Welcome to Rock paper scissors!</span>
+        <div class = "main">
+            <button id="rock">Rock</button>
+            <button id = "paper">Paper</button>
+            <button id = "scissors">Scissors</button>
+        </div>
+    
         <!-- Make a div, and have it display all console messages using DOM-->
         <div class = "announce">
             Results go here
@@ -44,6 +48,8 @@
         //this function takes two arguments from the functions earlier that return the player choice and the computer choice//
         //Then goes through a series of if statements to determine the print screen outcome//
         function playRound(playerSelection, computerSelection){
+            
+
             
             console.log("Computer has chosen " + item)
             if (playerSelection === computerSelection){
@@ -94,29 +100,68 @@
         let score = 0
        
         //game()
-        
-        
-    const btn = document.querySelector('#rock');
-    const btn1 = document.querySelector('#scissors');
-    const btn2 =document.querySelector('#paper');
+    const body = document.body
 
-    btn.addEventListener('click',() => {
-        console.log("rock");
-        const practice = document.querySelector(".announce");
-        practice.textContent ="Hello world!";
-    });
-    // the blank function says to console log rock when the event listener is used.
-
-  
-    btn1.addEventListener('click',() => {
-        console.log("scissors");
-
-    });
-
-    btn2.addEventListener('click',() => {
-        console.log("paper");
-    });
     
+    const rockbtn = document.querySelector('#rock');
+    const scissorsbtn = document.querySelector('#scissors');
+    const paperbtn =document.querySelector('#paper');
+
+
+    rockbtn.addEventListener('click',() =>{
+        const check = document.getElementById('#div1')
+        if(check!==null){
+            check.textContent = "you picked Rock!"
+            console.log("it exists")
+        }
+        else{
+        
+        const div = document.createElement('div');
+        div.setAttribute('style','color:blue;');
+        div.setAttribute('id','#div1')
+        div.textContent = "Hello world!"
+        body.append(div);
+        console.log("Made it!")
+        }
+    });
+
+    paperbtn.addEventListener('click', ()=>{
+        const check = document.getElementById('#div1')
+        if(check!==null){
+            check.textContent = "you picked paper!"
+            console.log("it exists")
+        }
+        else{
+        
+        const div = document.createElement('div');
+        div.setAttribute('style','color:blue;');
+        div.setAttribute('id','#div1')
+        div.textContent = "You dddd paper!"
+        body.append(div);
+        console.log("Made it!")
+        }
+    })
+
+    scissorsbtn.addEventListener('click', ()=>{
+        const check = document.getElementById('#div1')
+        if(check!==null){
+            check.textContent = "you picked scissors!"
+            console.log("it exists")
+        }
+        else{
+        
+        const div = document.createElement('div');
+        div.setAttribute('style','color:blue;');
+        div.setAttribute('id','#div1')
+        div.textContent = "You dddd scissors!"
+        body.append(div);
+        console.log("Made it!")
+        }
+    })
+     
+     
+
+   
     
     </script>
     <!--The scripts for javascript go here-->
