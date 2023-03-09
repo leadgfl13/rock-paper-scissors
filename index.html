@@ -16,7 +16,9 @@
             <button id = "scissors">Scissors</button>
             <button id = "computer">Computer Choice</button>
         </div>
-    
+    <div class = "decide">
+        <button id = "decide"> Calculate Results</button>
+    </div>
         <!-- Make a div, and have it display all console messages using DOM-->
         <div class = "announce">
             Results go here
@@ -103,7 +105,8 @@
         //game()
     const body = document.body
 
-    
+    let playerChoice = ' ';
+    let compChoice = ' ';
     const rockbtn = document.querySelector('#rock');
     const scissorsbtn = document.querySelector('#scissors');
     const paperbtn =document.querySelector('#paper');
@@ -114,6 +117,9 @@
         if(check!==null){
             check.textContent = "you picked Rock!"
             console.log("it exists")
+            playerChoice = 'rock'
+            return(playerChoice)
+
         }
         else{
         
@@ -123,6 +129,8 @@
         div.textContent = "Hello world!"
         body.append(div);
         console.log("Made it!")
+        playerChoice = 'rock'
+        return(playerChoice)
         }
     });
 
@@ -131,6 +139,8 @@
         if(check!==null){
             check.textContent = "you picked paper!"
             console.log("it exists")
+            playerChoice = 'paper'
+            return(playerChoice)
         }
         else{
         
@@ -140,6 +150,8 @@
         div.textContent = "You dddd paper!"
         body.append(div);
         console.log("Made it!")
+        playerChoice = 'paper'
+        return(playerChoice)
         }
     })
 
@@ -148,6 +160,8 @@
         if(check!==null){
             check.textContent = "you picked scissors!"
             console.log("it exists")
+            playerChoice = 'scissors'
+            return(playerChoice)
         }
         else{
         
@@ -157,20 +171,40 @@
         div.textContent = "You dddd scissors!"
         body.append(div);
         console.log("Made it!")
+        playerChoice = 'scissors'
+        return(playerChoice)
         }
     })
-     
+     //button for computer choice
     compbtn.addEventListener('click',()=>{
         const div = document.createElement('div');
         div.setAttribute('style', 'color:red');
         div.setAttribute('id','compdiv');
         choices =["rock", "paper", "scissors"]
-        item = choices[Math.floor(Math.random()*choices.length)];
-        div.textContent = item
-        body.append(div);
+        computerChoice = choices[Math.floor(Math.random()*choices.length)];
+        div.textContent = computerChoice
+        body.append(div)
+        console.log(computerChoice)
+        return(computerChoice);
     })
 
-   
+   //button for calculation
+    const decide = document.getElementById('decide')
+    decide.addEventListener('click',()=>{
+        if (computerChoice == 'rock' && playerChoice == 'scissors'){
+            console.log("Computer wins!")
+            const final = document.createElement('div')
+            final.setAttribute('class','final')
+            final.textContent = "Computer Wins!"
+            body.append(final)
+        }
+        if (computerChoice == 'rock' && playerChoice == 'paper'){
+            console.log("You win!")
+        }
+        
+        }
+
+    )
     
     </script>
     <!--The scripts for javascript go here-->
