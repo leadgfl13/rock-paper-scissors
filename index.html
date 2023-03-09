@@ -164,7 +164,9 @@
         const div = document.createElement('div');
         div.setAttribute('style', 'color:red');
         div.setAttribute('id','compdiv');
-        div.textContent = "Computer picks rocks!"
+        choices =["rock", "paper", "scissors"]
+        item = choices[Math.floor(Math.random()*choices.length)];
+        div.textContent = item
         body.append(div);
     })
 
