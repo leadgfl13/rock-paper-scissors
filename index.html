@@ -39,26 +39,20 @@
             return(item)
         }
      
-      
-
+    
         //Function to get player choice//
         // prompt asks user for an input
         //toLowercase conversts the input from the player to all lowercase//
         //returns the lowercase input
         
             
-        
         //this function takes two arguments from the functions earlier that return the player choice and the computer choice//
         //Then goes through a series of if statements to determine the print screen outcome//
         function playRound(playerSelection, computerSelection){
             
-
-            
             console.log("Computer has chosen " + item)
             if (playerSelection === computerSelection){
-                alert("It's a tie round")
-                
-                
+                console.log("It's a tie round")
                 
             }
             else if(playerSelection == 'rock' & computerSelection == 'paper'){
@@ -97,16 +91,15 @@
              //   return(score)
            // }
 
-        //Need to create a buttons for each rock, paper, and scissors. Need to make the button as a thing to reference first.
         
         
-        let score = 0
+    let score = 0
        
         //game()
     const body = document.body
 
     let playerChoice = ' ';
-    let compChoice = ' ';
+    let item = ' ';
     const rockbtn = document.querySelector('#rock');
     const scissorsbtn = document.querySelector('#scissors');
     const paperbtn =document.querySelector('#paper');
@@ -114,11 +107,13 @@
 
     rockbtn.addEventListener('click',() =>{
         const check = document.getElementById('#div1')
-        if(check!==null){
+        if(check){
             check.textContent = "you picked Rock!"
-            console.log("it exists")
             playerChoice = 'rock'
-            return(playerChoice)
+// put computer choice function and playround function in the button.  Reports to the console outcome of game, now just need to append divs for each function
+            getComputerChoice()
+            playRound(item, playerChoice);
+            
 
         }
         else{
@@ -131,6 +126,9 @@
         console.log("Made it!")
         playerChoice = 'rock'
         return(playerChoice)
+        getComputerChoice();
+        playRound(item, playerChoice);
+        
         }
     });
 
@@ -141,6 +139,7 @@
             console.log("it exists")
             playerChoice = 'paper'
             return(playerChoice)
+            
         }
         else{
         
