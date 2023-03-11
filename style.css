@@ -37,3 +37,9 @@ button{
     color:blue;
     font-size:42px;
 }
+
+.decide{
+    display:flex;
+    justify-content:space-around;
+    margin-top:100px;
+}
