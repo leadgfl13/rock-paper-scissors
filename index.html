@@ -14,17 +14,13 @@
             <button id="rock">Rock</button>
             <button id = "paper">Paper</button>
             <button id = "scissors">Scissors</button>
-            <button id = "computer">Computer Choice</button>
         </div>
-    <div class = "decide">
-        <button id = "decide"> Calculate Results</button>
-    </div>
-        <!-- Make a div, and have it display all console messages using DOM-->
-        <div class = "announce">
-            Results go here
-        </div>
+   
+     
         
-            </body>
+    </body>
+
+
     <script>
    
         //Function to get computer choice goes here//
@@ -38,16 +34,8 @@
             item = choices[Math.floor(Math.random()*choices.length)];
             return(item)
         }
-     
-    
-        //Function to get player choice//
-        // prompt asks user for an input
-        //toLowercase conversts the input from the player to all lowercase//
-        //returns the lowercase input
-        
-            
-        //this function takes two arguments from the functions earlier that return the player choice and the computer choice//
-        //Then goes through a series of if statements to determine the print screen outcome//
+
+ 
         function playRound(playerSelection, computerSelection){
             
             console.log("Computer has chosen " + item)
@@ -77,11 +65,10 @@
             }
             else if(playerSelection == 'scissors' & computerSelection == 'paper'){
                 console.log("You won this round")
-                score = (score+  1)
-                
-            }
-                
-            }
+                score = (score+  1)   
+            }   }
+
+
             console.log("Welcome to rock, paper, scissors!    Can you beat me?")
             //This function makes the playRound function go 5 times
             //function game(rungame){
@@ -91,15 +78,17 @@
              //   return(score)
            // }
 
-        
-        
+    
     let score = 0
        
-        //game()
     const body = document.body
 
     let playerChoice = ' ';
     let item = ' ';
+
+
+
+
     const rockbtn = document.querySelector('#rock');
     const scissorsbtn = document.querySelector('#scissors');
     const paperbtn =document.querySelector('#paper');
@@ -116,19 +105,18 @@
             
 
         }
-        else{
+        if(!check){
         
         const div = document.createElement('div');
         div.setAttribute('style','color:blue;');
         div.setAttribute('id','#div1')
-        div.textContent = "Hello world!"
+        div.textContent = "You chose Rock!"
         body.append(div);
         console.log("Made it!")
         playerChoice = 'rock'
         return(playerChoice)
         getComputerChoice();
         playRound(item, playerChoice);
-        
         }
     });
 
@@ -174,36 +162,7 @@
         return(playerChoice)
         }
     })
-     //button for computer choice
-    compbtn.addEventListener('click',()=>{
-        const div = document.createElement('div');
-        div.setAttribute('style', 'color:red');
-        div.setAttribute('id','compdiv');
-        choices =["rock", "paper", "scissors"]
-        computerChoice = choices[Math.floor(Math.random()*choices.length)];
-        div.textContent = computerChoice
-        body.append(div)
-        console.log(computerChoice)
-        return(computerChoice);
-    })
 
-   //button for calculation
-    const decide = document.getElementById('decide')
-    decide.addEventListener('click',()=>{
-        if (computerChoice == 'rock' && playerChoice == 'scissors'){
-            console.log("Computer wins!")
-            const final = document.createElement('div')
-            final.setAttribute('class','final')
-            final.textContent = "Computer Wins!"
-            body.append(final)
-        }
-        if (computerChoice == 'rock' && playerChoice == 'paper'){
-            console.log("You win!")
-        }
-        
-        }
-
-    )
     
     </script>
     <!--The scripts for javascript go here-->
