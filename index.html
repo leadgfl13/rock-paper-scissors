@@ -15,20 +15,15 @@
             <button id = "paper">Paper</button>
             <button id = "scissors">Scissors</button>
         </div>
-   
-     
-        
     </body>
+
+
 
 
     <script>
    
         //Function to get computer choice goes here//
-        //math.Random gets a value between 0 and 1//
-        //choices.length is the length of the array, so 2, because 0,1,2.//
-        //multiply math. random and choice. lenght should equal anything from 0 to 2//
-        //math.floor rounds that number down//
-        //then choices[that final number] returns the corresponding item in the array//
+        
         function getComputerChoice(){
             choices =["rock", "paper", "scissors"]
             item = choices[Math.floor(Math.random()*choices.length)];
@@ -97,21 +92,21 @@
     rockbtn.addEventListener('click',() =>{
         const check = document.getElementById('#div1')
         if(check){
-            check.textContent = "you picked Rock!"
             playerChoice = 'rock'
 // put computer choice function and playround function in the button.  Reports to the console outcome of game, now just need to append divs for each function
             getComputerChoice()
+            check.textContent = "You chose rock and the computer has chosen" + " " +item
             playRound(item, playerChoice);     
         }
         else{
         const div = document.createElement('div');
         div.setAttribute('style','color:blue;');
         div.setAttribute('id','#div1')
-        div.textContent = "You chose Rock!"
         body.append(div);
         console.log("Made it!")
         playerChoice = 'rock'
-        getComputerChoice();
+        getComputerChoice()
+        div.textContent = "You chose rock and the computer has chosen" + " " +item
         playRound(item, playerChoice);
         }
     });
@@ -119,43 +114,44 @@
     paperbtn.addEventListener('click', ()=>{
         const check = document.getElementById('#div1')
         if(check){
-            check.textContent = "you picked paper!"
+            getComputerChoice()
+            check.textContent = "You chose paper and  the computer has chosen" + " " +item
             playerChoice = 'paper'
 // put computer choice function and playround function in the button.  Reports to the console outcome of game, now just need to append divs for each function
-            getComputerChoice()
             playRound(item, playerChoice);     
         }
         else{
         const div = document.createElement('div');
         div.setAttribute('style','color:blue;');
         div.setAttribute('id','#div1')
-        div.textContent = "You chose paper!"
         body.append(div);
         console.log("Made it!")
         playerChoice = 'paper'
         getComputerChoice();
+        div.textContent ="You chose paper and the computer has chosen" + " " +item
         playRound(item, playerChoice);
         }
     });
 
+
     scissorsbtn.addEventListener('click', ()=>{
         const check = document.getElementById('#div1')
         if(check){
-            check.textContent = "you picked scissors!"
+            getComputerChoice()
+            check.textContent = "you picked scissors and the computer picked" + " " + item
             playerChoice = 'scissors'
 // put computer choice function and playround function in the button.  Reports to the console outcome of game, now just need to append divs for each function
-            getComputerChoice()
             playRound(item, playerChoice);     
         }
         else{
         const div = document.createElement('div');
         div.setAttribute('style','color:blue;');
         div.setAttribute('id','#div1')
-        div.textContent = "You chose scissors!"
         body.append(div);
         console.log("Made it!")
         playerChoice = 'scissors'
         getComputerChoice();
+        div.textContent = "you picked scissors and the computer has picked" + " " + item
         playRound(item, playerChoice);
         }
     });
