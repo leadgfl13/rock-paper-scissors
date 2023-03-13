@@ -46,7 +46,14 @@
         body.append(scoredisplay);
         }
         }
-
+         function checkScore(){
+            if(score == 5){
+                const victory = document.createElement('div');
+                victory.setAttribute('id','#victory')
+                victory.textContent = "You've won!"
+                body.append(victory)
+            }
+         }
 
         function playRound(computerSelection, playerSelection){
             
@@ -127,6 +134,7 @@
             check.textContent = "You chose rock and the computer has chosen" + " " +item
             playRound(item, playerChoice);     
             displayScore()
+            checkScore()
         }
         else{
         const div = document.createElement('div');
@@ -139,6 +147,7 @@
         div.textContent = "You chose rock and the computer has chosen" + " " +item
         playRound(item, playerChoice);
         displayScore()
+        checkScore()
         }
     });
 
@@ -151,6 +160,7 @@
 // put computer choice function and playround function in the button.  Reports to the console outcome of game, now just need to append divs for each function
             playRound(item, playerChoice);     
             displayScore()
+            checkScore()
         }
         else{
         const div = document.createElement('div');
@@ -163,6 +173,7 @@
         div.textContent ="You chose paper and the computer has chosen" + " " +item
         playRound(item, playerChoice);
         displayScore()
+        checkScore()
         }
     });
 
@@ -176,6 +187,7 @@
 // put computer choice function and playround function in the button.  Reports to the console outcome of game, now just need to append divs for each function
             playRound(item, playerChoice);     
             displayScore()
+            checkScore()
         }
         else{
         const div = document.createElement('div');
@@ -188,6 +200,7 @@
         div.textContent = "you picked scissors and the computer has picked" + " " + item
         playRound(item, playerChoice);
         displayScore()
+        checkScore()
         }
     });
 
