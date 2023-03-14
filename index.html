@@ -7,7 +7,6 @@
     </head>
 
     <body>
-        <!--Actual web page content goes here-->
         <!--Makes the physical buttons on the webpage-->
 <span class = "title"> Welcome to Rock paper scissors!</span>
         <div class = "main">
@@ -34,83 +33,92 @@
         // checks to see if score is already displayed, if not create div and add it, otherwise update div
         function displayScore(){
             check = document.getElementById('#scoredisplay')
+            check2 = document.getElementById('#computerscore')
             if(check){
-                check.textContent = "Score is" + score
+                check.textContent = "Score is " + playerscore
+                check2.textContent = "Computer score is " + computerscore
+
             }
+            
 
         else{ document.createElement('div');
         const scoredisplay = document.createElement('div');
         scoredisplay.setAttribute('style','color:red;');
         scoredisplay.setAttribute('id','#scoredisplay')
-        scoredisplay.textContent = "Score is" + score
-        body.append(scoredisplay);
+        scoredisplay.textContent = "Score is" + playerscore
+        document.createElement('div');
+        const compscoredisplay = document.createElement('div');
+        compscoredisplay.setAttribute('style','color:red;');
+        compscoredisplay.setAttribute('id','#computerscore')
+        compscoredisplay.textContent = "Computer score  is" + computerscore
+        body.append(scoredisplay)
+        body.append(compscoredisplay)
         }
         }
          function checkScore(){
-            if(score == 5){
+            if(playerscore == 5){
                 const victory = document.createElement('div');
                 victory.setAttribute('id','#victory')
                 victory.textContent = "You've won!"
                 body.append(victory)
             }
+            if(computerscore ==5){
+                const victory = document.createElement('div');
+                victory.setAttribute('id','#victory')
+                victory.textContent = "The computer has won!"
+                body.append(victory)
+
+
+            }
+         }
+
+         function addPlayerScore(){
+         playerscore = playerscore+1;
+         return(playerscore)
+         }
+         function addComputerScore(){
+         computerscore = computerscore +1
+         return(computerscore)
          }
 
         function playRound(computerSelection, playerSelection){
             
-            console.log("Computer has chosen " + item)
-            if (playerSelection === computerSelection){
-                score = score
-                console.log("It's a tie round")
-                console.log(score)
 
-                
+            if (playerSelection === computerSelection){
+                    console.log("its a tie")
             }
             else if(playerSelection == 'rock' & computerSelection == 'paper'){
-                score = score
-                console.log("You lost this round")
-                console.log(score)
+                addComputerScore()
                 
             }
             else if(playerSelection == 'rock' & computerSelection == 'scissors'){
-                score = score +1
-                console.log("You won this round")
-                console.log(score)
+                addPlayerScore()
                 
             }
             else if(playerSelection == 'paper' & computerSelection == 'rock'){
-                console.log("You won this round")
-                score = (score+  1)
-                console.log(score)
                 
+                addPlayerScore()
             }
             else if(playerSelection == 'paper' & computerSelection == 'scissors'){
-                score = score
-                console.log("You lost this round")
-                console.log(score)
+                addComputerScore()
             }
+                
             else if(playerSelection == 'scissors' & computerSelection == 'rock'){
-                score = score
-                console.log("You lost this round")
-                console.log(score)
+                addComputerScore()
+                
             }
             else if(playerSelection == 'scissors' & computerSelection == 'paper'){
-                console.log("You won this round")
-                console.log(score)
-                score = (score+  1)   
-            }   }
+                addPlayerScore()
+                
+            } 
+        }
 
 
-            console.log("Welcome to rock, paper, scissors!    Can you beat me?")
-            //This function makes the playRound function go 5 times
-            //function game(rungame){
-              //  getComputerChoice()
-              //  getPlayerChoice()
-              //  playRound(lower,item)
-             //   return(score)
-           // }
+        
 
     
-    let score = 0
+    let playerscore = 0
+    let computerscore = 0
        
     const body = document.body
 
@@ -202,7 +210,7 @@
         displayScore()
         checkScore()
         }
-    });
+    })
 
     
     </script>
