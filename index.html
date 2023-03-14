@@ -43,14 +43,12 @@
 
         else{ document.createElement('div');
         const scoredisplay = document.createElement('div');
-        scoredisplay.setAttribute('style','color:red;');
         scoredisplay.setAttribute('id','#scoredisplay')
-        scoredisplay.textContent = "Score is" + playerscore
+        scoredisplay.textContent = "Score is " + playerscore
         document.createElement('div');
-        const compscoredisplay = document.createElement('div');
-        compscoredisplay.setAttribute('style','color:red;');
+        const compscoredisplay = document.createElement('div'); 
         compscoredisplay.setAttribute('id','#computerscore')
-        compscoredisplay.textContent = "Computer score  is" + computerscore
+        compscoredisplay.textContent = "Computer score  is " + computerscore
         body.append(scoredisplay)
         body.append(compscoredisplay)
         }
@@ -81,33 +79,54 @@
          return(computerscore)
          }
 
+
+         function addDiv(text){
+            const check = document.getElementById('#newdiv')
+            if (!check){
+            const newDiv = document.createElement('div')
+            newDiv.setAttribute('id', '#newdiv')
+            newDiv.textContent = text
+            body.append(newDiv)
+         }
+         else{
+            check.textContent = text
+         }
+        }
         function playRound(computerSelection, playerSelection){
             
 
             if (playerSelection === computerSelection){
-                    console.log("its a tie")
+                addDiv("Its a tie round")
+                    
+                
             }
             else if(playerSelection == 'rock' & computerSelection == 'paper'){
+                addDiv("Computer wins this round")
                 addComputerScore()
+                
                 
             }
             else if(playerSelection == 'rock' & computerSelection == 'scissors'){
+                addDiv("You won this round")
                 addPlayerScore()
                 
             }
             else if(playerSelection == 'paper' & computerSelection == 'rock'){
-                
+                addDiv("You won this round")
                 addPlayerScore()
             }
             else if(playerSelection == 'paper' & computerSelection == 'scissors'){
+                addDiv("Computer won this round")
                 addComputerScore()
             }
                 
             else if(playerSelection == 'scissors' & computerSelection == 'rock'){
+                addDiv("Computer won this round")
                 addComputerScore()
                 
             }
             else if(playerSelection == 'scissors' & computerSelection == 'paper'){
+                addDiv("You won this")
                 addPlayerScore()
                 
             } 
