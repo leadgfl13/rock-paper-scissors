@@ -1,29 +1,16 @@
 body{
     background-color:rgb(191, 191, 255);
 }
-.announce{
-    display:flex;
-    background-color:salmon;
-    justify-content:center;
-    align-items:center;
-    color:skyblue;
-    font-size:24px;
-}
+
 
 button{
-    color:rgb(149, 149, 201);
+    color:black;
+    font-size:20px;
+    font-weight:600;
     background-color:rgb(233, 233, 233);
     padding:80px;
+    width:300px;
 
-}
-
-.practice{
-    color:crimson;
-    align-content:center;
-    display:flex;
-    justify-content:center;
-    margin-top:100px;
-    background-color:white;
 }
 
 .main{
@@ -34,8 +21,11 @@ button{
 
 .title{
     text-align:center;
-    color:blue;
+    color:rgb(0, 0, 134);
     font-size:42px;
+    text-align:center;
+    font-weight:800;
+    margin:50px;
 }
 
 .decide{
@@ -47,16 +37,53 @@ button{
 #computerscore{
     display:flex;
     font-size:20px;
-    justify-content:center;
-    align-items:center;
-    color:Black;
+    text-align:left;
+    color:red;
+    margin:20px;
 }
 
 #scoredisplay{
-    display:flex;
     font-size:20px;
-    justify-content:center;
-    align-items:center;
-    color:Black;
+    text-align:left;
+    color:blue;
+    margin:20px;
 }
 
+#newdiv{
+    font-size:40px;
+    display:flex;
+    justify-content:center;
+    margin:10px;
+}
+
+
+#victory{
+    font-size:48px;
+    color:gold;
+    font-weight:800;
+    text-align:center;
+    background-color:black;
+    margin:20px;
+}
+
+#div1{
+    margin:10px;
+    font-size:18px;
+    font-weight:800;
+    color:black;
+    text-align:center;
+    margin:30px;
+
+}
+#rock{background-color:rgb(184, 138, 69);}
+#paper{background-color:white;}
+#scissors{background-color:steelblue;}
+
+.sub{
+    font-size:20px;
+    text-align:center;
+    margin:80px;
+    font-weight:600;
+    margin-top:0;
+       
+}
